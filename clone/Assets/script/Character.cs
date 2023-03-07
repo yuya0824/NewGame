@@ -12,11 +12,11 @@ public class Character : MonoBehaviour
 
     private float jump = 0.0f;
 
-    public GameObject Water;
-
     private float size = 0;
 
     bool jumpOK = true;
+
+    private int waterCount = 0;
 
     // Update is called once per frame
     void Update()
@@ -68,9 +68,19 @@ public class Character : MonoBehaviour
     {
         if (coll.gameObject.name == "waterCollider")
         {
-            StartCoroutine(ReplayerSize());
-            transform.localScale = new Vector3(size, size, 1);
+            if (waterCount < 3)
+            {
+                StartCoroutine(ReplayerSize());
+                transform.localScale = new Vector3(size, size, 1);
+            }
+        }
 
+    }
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (transform.localScale.x >= 1.0f && transform.localScale.y >= 1.0f && transform.localScale.z >= 1.0f)
+        {
+            waterCount += 1;
         }
     }
 
