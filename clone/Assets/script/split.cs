@@ -24,7 +24,7 @@ public class split : MonoBehaviour
  
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (player.transform.localScale == new Vector3(1, 1, 1))
+            if (player.transform.localScale.x >= 1.0f && player.transform.localScale.y >= 1.0f && player.transform.localScale.z >= 1.0f)
             {
                 miniSize = 0.8f;
             }
