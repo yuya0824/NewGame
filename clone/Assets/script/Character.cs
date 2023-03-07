@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    float speed = 5.0f;
-    float jump = 0.0f;
+    [SerializeField]
+    private float speed = 5.0f;
+
+    [SerializeField]
+    private float jumpPower = 8.0f;
+
+    private float jump = 0.0f;
 
     public GameObject Water;
 
+    private float size = 0;
+
+<<<<<<< HEAD
+    bool jumpOK = true;
+
+=======
+>>>>>>> origin/Gimmick
     // Update is called once per frame
     void Update()
     {
@@ -24,9 +36,13 @@ public class Character : MonoBehaviour
             transform.position -= speed * transform.right * Time.deltaTime;
         }
 
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && jumpOK == true)
         {
-            jump = 8.0f;
+            jump = jumpPower;
+<<<<<<< HEAD
+            jumpOK = false;
+=======
+>>>>>>> origin/Gimmick
         }
 
         transform.position += jump * transform.up * Time.deltaTime;
@@ -38,7 +54,12 @@ public class Character : MonoBehaviour
     {
         if (collision.gameObject.name == "Stage")
         {
-            Debug.Log("Stage");
+            jumpOK = true;
+        }
+
+        if(collision.gameObject.name == "CharacterPrefab(Clone)")
+        {
+            jumpOK = true;
         }
 
         if (collision.gameObject.name == "goal")
@@ -51,7 +72,32 @@ public class Character : MonoBehaviour
     {
         if (coll.gameObject.name == "waterCollider")
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            StartCoroutine(ReplayerSize());
+            transform.localScale = new Vector3(size, size, 1);
+<<<<<<< HEAD
+=======
+        }
+    }
+
+    IEnumerator ReplayerSize()
+    {
+        size = transform.localScale.x;
+        while(size <= 1)
+        {
+            size += 0.01f;
+            yield return new WaitForSeconds(0.1f);
+>>>>>>> origin/Gimmick
+        }
+    }
+
+    IEnumerator ReplayerSize()
+    {
+        size = transform.localScale.x;
+
+        while (size <= 1)
+        {
+            size += 0.01f;
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }
