@@ -16,11 +16,8 @@ public class Character : MonoBehaviour
 
     private float size = 0;
 
-<<<<<<< HEAD
     bool jumpOK = true;
 
-=======
->>>>>>> origin/Gimmick
     // Update is called once per frame
     void Update()
     {
@@ -39,10 +36,9 @@ public class Character : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) && jumpOK == true)
         {
             jump = jumpPower;
-<<<<<<< HEAD
+
             jumpOK = false;
-=======
->>>>>>> origin/Gimmick
+
         }
 
         transform.position += jump * transform.up * Time.deltaTime;
@@ -74,8 +70,7 @@ public class Character : MonoBehaviour
         {
             StartCoroutine(ReplayerSize());
             transform.localScale = new Vector3(size, size, 1);
-<<<<<<< HEAD
-=======
+
         }
     }
 
@@ -86,18 +81,7 @@ public class Character : MonoBehaviour
         {
             size += 0.01f;
             yield return new WaitForSeconds(0.1f);
->>>>>>> origin/Gimmick
-        }
-    }
 
-    IEnumerator ReplayerSize()
-    {
-        size = transform.localScale.x;
-
-        while (size <= 1)
-        {
-            size += 0.01f;
-            yield return new WaitForSeconds(0.1f);
         }
     }
 }
