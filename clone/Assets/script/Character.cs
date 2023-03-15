@@ -14,9 +14,16 @@ public class Character : MonoBehaviour
 
     private float size = 0;
 
+    public Rigidbody2D rb;
+
     bool jumpOK = true;
 
     private int waterCount = 0;
+
+    void Start()
+    {
+        rb = transform.GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,18 +31,19 @@ public class Character : MonoBehaviour
         // （右移動）
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += speed * transform.right * Time.deltaTime;
+            rb.AddForce(transform.right * speed, ForceMode2D.Force);
         }
 
         // (左移動）
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position -= speed * transform.right * Time.deltaTime;
+            rb.AddForce(-transform.right * speed, ForceMode2D.Force);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && jumpOK == true)
+        //ジャンプ
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            jump = jumpPower;
+            rb.AddForce(transform.up * jumpPower, ForceMode2D.Force);
 
             jumpOK = false;
 
