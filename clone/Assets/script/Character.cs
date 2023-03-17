@@ -41,7 +41,7 @@ public class Character : MonoBehaviour
         }
 
         //ƒWƒƒƒ“ƒv
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && jumpOK == true)
         {
             rb.AddForce(transform.up * jumpPower, ForceMode2D.Force);
 
