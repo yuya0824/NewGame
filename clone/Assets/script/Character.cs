@@ -12,17 +12,28 @@ public class Character : MonoBehaviour
 
     private float jump = 0.0f;
 
-    private float size = 0;
-
     public Rigidbody2D rb;
 
-    bool jumpOK = true;
+    public bool jumpOK = true;
 
-    private int waterCount = 0;
+    public touch Tou1;
+    public touch Tou2;
+    public touch Tou3;
+    public touch Tou4;
 
     void Start()
     {
         rb = transform.GetComponent<Rigidbody2D>();
+
+        GameObject obj1 = GameObject.Find("bone_7");
+        GameObject obj2 = GameObject.Find("bone_8");
+        GameObject obj3 = GameObject.Find("bone_9");
+        GameObject obj4 = GameObject.Find("bone_10");
+
+        Tou1 = obj1.GetComponent<touch>();
+        Tou2 = obj2.GetComponent<touch>();
+        Tou3 = obj3.GetComponent<touch>();
+        Tou4 = obj4.GetComponent<touch>();
     }
 
     // Update is called once per frame
@@ -52,54 +63,9 @@ public class Character : MonoBehaviour
         transform.position += jump * transform.up * Time.deltaTime;
         jump *= 0.98f;
 
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Stage")
-        {
-            jumpOK = true;
-        }
-
-        if(collision.gameObject.name == "CharacterPrefab(Clone)")
-        {
-            jumpOK = true;
-        }
-
-        if (collision.gameObject.name == "goal")
-        {
-            Debug.Log("goal");
-        }
-    }
-
-    void OnTriggerStay2D(Collider2D coll)
-    {
-        if (coll.gameObject.name == "waterCollider")
-        {
-            if (waterCount < 3)
-            {
-                StartCoroutine(ReplayerSize());
-                transform.localScale = new Vector3(size, size, 1);
-            }
-        }
-
-    }
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (transform.localScale.x >= 1.0f && transform.localScale.y >= 1.0f && transform.localScale.z >= 1.0f)
-        {
-            waterCount += 1;
-        }
-    }
-
-    IEnumerator ReplayerSize()
-    {
-        size = transform.localScale.x;
-        while(size <= 1)
-        {
-            size += 0.01f;
-            yield return new WaitForSeconds(0.1f);
-
-        }
+        jumpOK = Tou1.jumpOK;
+        jumpOK = Tou2.jumpOK;
+        jumpOK = Tou3.jumpOK;
+        jumpOK = Tou4.jumpOK;
     }
 }
