@@ -20,6 +20,8 @@ public class GroundCheck2D : MonoBehaviour
     {
         Gizmos.DrawWireSphere((Vector2)transform.position + groundCheckOffsetY * Vector2.up, groundCheckRadius);
     }
+
+
     //void OnSceneGUI()
     //{
     //    Handles.color = Color.red;
