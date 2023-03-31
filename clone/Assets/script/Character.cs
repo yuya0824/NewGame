@@ -12,14 +12,16 @@ public class Character : MonoBehaviour
 
     private float jump = 0.0f;
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
+    const float jumpDown = 0.98f;
+    //private GroundCheck2D ground;
     public bool jumpOK = true;
 
-    public touch Tou1;
-    public touch Tou2;
-    public touch Tou3;
-    public touch Tou4;
+    private touch Tou1;
+    private touch Tou2;
+    private touch Tou3;
+    private touch Tou4;
 
     void Start()
     {
@@ -56,16 +58,15 @@ public class Character : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpPower, ForceMode2D.Force);
 
-            jumpOK = false;
 
         }
 
         transform.position += jump * transform.up * Time.deltaTime;
-        jump *= 0.98f;
+        jump *= jumpDown;
 
-        jumpOK = Tou1.jumpOK;
-        jumpOK = Tou2.jumpOK;
-        jumpOK = Tou3.jumpOK;
-        jumpOK = Tou4.jumpOK;
+        jumpOK = Tou1.IsJump();
+        jumpOK = Tou2.IsJump();
+        jumpOK = Tou3.IsJump();
+        jumpOK = Tou4.IsJump();
     }
 }
