@@ -7,7 +7,7 @@ public class SceneManager : MonoBehaviour
 {
 
     [SerializeField]
-    private Scene[] scenes;
+    private SceneObject[] scenes;
     // Start is called before the first frame update
     void Start()
     {

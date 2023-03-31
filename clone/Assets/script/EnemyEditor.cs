@@ -6,18 +6,7 @@ using NaughtyAttributes;
 [CreateAssetMenu(menuName = "EnemyParam")]
 public class EnemyEditor : ScriptableObject
 {
-    [SerializeField, Range(1, 10)]
-    private int maxHP = 1;
-    [SerializeField]
-    private GameObject gameObject;
-    [SerializeField]
-    private bool isAlive = false;
-
-    [SerializeField, EnableIf("isAlive")]
-    private int aliveLife = 0;
-
-    //[SerializeField]
-    private enum EnemyType
+    public enum EnemyType
     {
         Type1,
         Type2,
@@ -26,10 +15,28 @@ public class EnemyEditor : ScriptableObject
         None
     };
 
-    [SerializeField]
-    private EnemyType enemyType = EnemyType.None;
+    [System.Serializable]
+    public struct EnemyManage
+    {
+        [/*SerializeField,*/ Range(1, 10)]
+        public int maxHP/* = 1*/;
+        //[SerializeField]
+        public GameObject gameObject;
+        //[SerializeField]
+        public bool isAlive/* = false*/;
 
-    
+
+        //[SerializeField]
+        public EnemyType enemyType/* = EnemyType.None*/;
+
+    }
+
+    [SerializeField]
+    private EnemyManage enemyManage;
+
+
+
+
 
     //[SerializeField, EnableIf("enemyType == EnemyType.Type1")]
     //private int offspring;
@@ -42,8 +49,8 @@ public class EnemyEditor : ScriptableObject
     // Start is called before the first frame update
     void Start()
     {
-
-    }
+        
+    }       
 
     // Update is called once per frame
     void Update()
@@ -51,5 +58,8 @@ public class EnemyEditor : ScriptableObject
         
     }
 
-    
+    public EnemyManage GetEnemyManage()
+    {
+        return enemyManage;
+    }
 }
