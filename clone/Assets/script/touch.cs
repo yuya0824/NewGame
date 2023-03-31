@@ -6,7 +6,7 @@ public class touch : MonoBehaviour
 {
     private float size = 0;
 
-    public bool jumpOK = true;
+    private bool jumpOK = true;
 
     private int waterCount = 0;
 
@@ -64,5 +64,10 @@ public class touch : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
 
         }
+    }
+
+    public bool IsJump()
+    {
+        return jumpOK;
     }
 }
