@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075dad1032ea09c45b2afe14fc726ac6, type: 3}
   m_Name: Enemy1
   m_EditorClassIdentifier: 
-  enemyManage:
-    maxHP: 10
-    gameObject: {fileID: 0}
-    isAlive: 1
-    enemyType: 0
+  maxHP: 1
+  gameObject: {fileID: 0}
+  isAlive: 0
+  aliveLife: 0
+  enemyType: 0
