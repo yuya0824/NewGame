@@ -58,7 +58,6 @@ public class Character : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpPower, ForceMode2D.Force);
 
-
         }
 
         transform.position += jump * transform.up * Time.deltaTime;

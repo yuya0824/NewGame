@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class touch : MonoBehaviour
 {
@@ -23,7 +24,6 @@ public class touch : MonoBehaviour
         {
             jumpOK = true;
         }
-
         if (collision.gameObject.name == "CharacterPrefab(Clone)")
         {
             jumpOK = true;
@@ -31,8 +31,12 @@ public class touch : MonoBehaviour
 
         if (collision.gameObject.name == "goal")
         {
-            Debug.Log("goal");
+            SceneManager.LoadScene("ResultScene");
         }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        jumpOK = false;    
     }
 
     void OnTriggerStay2D(Collider2D coll)
