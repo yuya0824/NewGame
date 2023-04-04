@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Changescene : MonoBehaviour
 {
+    
+
     // Update is called once per frame
     void Update()
     {
@@ -12,6 +14,8 @@ public class Changescene : MonoBehaviour
         {
             SceneManager.LoadScene("GameScene");
         }
+
+
 
         if (Input.GetKeyDown(KeyCode.Space) && SceneManager.GetActiveScene().name == "ResultScene")
         {

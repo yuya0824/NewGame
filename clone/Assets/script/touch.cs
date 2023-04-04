@@ -28,11 +28,6 @@ public class touch : MonoBehaviour
         {
             jumpOK = true;
         }
-
-        if (collision.gameObject.name == "goal")
-        {
-            SceneManager.LoadScene("ResultScene");
-        }
     }
 
     void OnTriggerStay2D(Collider2D coll)

@@ -41,6 +41,7 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // ÅiâEà⁄ìÆÅj
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -58,14 +59,16 @@ public class Character : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpPower, ForceMode2D.Force);
 
+            jumpOK = false;
         }
-
-        transform.position += jump * transform.up * Time.deltaTime;
-        jump *= jumpDown;
 
         jumpOK = Tou1.IsJump();
         jumpOK = Tou2.IsJump();
         jumpOK = Tou3.IsJump();
         jumpOK = Tou4.IsJump();
+
+        transform.position += jump * transform.up * Time.deltaTime;
+        jump *= jumpDown;
+
     }
 }
