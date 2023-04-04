@@ -34,10 +34,6 @@ public class touch : MonoBehaviour
             SceneManager.LoadScene("ResultScene");
         }
     }
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        jumpOK = false;    
-    }
 
     void OnTriggerStay2D(Collider2D coll)
     {
