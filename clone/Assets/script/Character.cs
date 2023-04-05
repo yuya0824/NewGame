@@ -6,7 +6,8 @@ public class Character : MonoBehaviour
 {
     [SerializeField]
     private float speed = 5.0f;
-
+    [SerializeField]
+    private float jumpSpeed;
     [SerializeField]
     private float LimitSpeed;
     [SerializeField]
@@ -45,16 +46,19 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float speedPower = 0;
+        if (isJump)
+            speedPower = speed;
+        else
+            speedPower = jumpSpeed;
+
 
         // （右移動）
         if (Input.GetKey(KeyCode.RightArrow))
         {
             if (rb.velocity.magnitude < LimitSpeed)
             {
-                if (isJump)
-                rb.AddForce(transform.right * (speed), ForceMode2D.Force);
-                else
-                    rb.AddForce(transform.right * (speed * 0.8f), ForceMode2D.Force);
+                rb.AddForce(transform.right * (speedPower), ForceMode2D.Force);
             }
         }
         // (左移動）
@@ -62,10 +66,7 @@ public class Character : MonoBehaviour
         {
             if (rb.velocity.magnitude < LimitSpeed)
             {
-                if(isJump)
-                rb.AddForce(-transform.right * (speed), ForceMode2D.Force);
-                else
-                    rb.AddForce(-transform.right * (speed * 0.8f), ForceMode2D.Force);
+                rb.AddForce(-transform.right * (speedPower), ForceMode2D.Force);
             }
         }
         //ジャンプ
