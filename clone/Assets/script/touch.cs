@@ -7,7 +7,7 @@ public class touch : MonoBehaviour
 {
     private float size = 0;
 
-    private bool jumpOK = true;
+    //private bool jumpOK = true;
 
     private int waterCount = 0;
 
@@ -15,19 +15,19 @@ public class touch : MonoBehaviour
 
     void Start()
     {
-        jumpOK = true;
+        //jumpOK = true;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Stage")
-        {
-            jumpOK = true;
-        }
-        if (collision.gameObject.name == "CharacterPrefab(Clone)")
-        {
-            jumpOK = true;
-        }
+        //if (collision.gameObject.name == "Stage")
+        //{
+        //    jumpOK = true;
+        //}
+        //if (collision.gameObject.name == "CharacterPrefab(Clone)")
+        //{
+        //    jumpOK = true;
+        //}
 
         if (collision.gameObject.name == "goal")
         {
@@ -66,8 +66,8 @@ public class touch : MonoBehaviour
         }
     }
 
-    public bool IsJump()
-    {
-        return jumpOK;
-    }
+    //public bool IsJump()
+    //{
+    //    return jumpOK;
+    //}
 }

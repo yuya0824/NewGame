@@ -18,7 +18,8 @@ public class GroundCheck2D : MonoBehaviour
     LayerMask groundLayers = 0;
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere((Vector2)transform.position + groundCheckOffsetY * Vector2.up, groundCheckRadius);
+        Debug.DrawLine((Vector2)transform.position, (Vector2)transform.position + groundCheckOffsetY * Vector2.up + (Vector2.down * groundCheckDistance));
+        Gizmos.DrawWireSphere((Vector2)transform.position + groundCheckOffsetY * Vector2.up + (Vector2.down * groundCheckDistance), groundCheckRadius);
     }
 
 
