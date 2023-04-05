@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     private float jumpPower = 8.0f;
 
-    private float jump = 0.0f;
+    //private float jump = 0.0f;
 
     private Rigidbody2D rb;
 
@@ -69,8 +69,8 @@ public class Character : MonoBehaviour
         //jumpOK = Tou4.IsJump();
         //jumpOK = 
 
-        transform.position += jump * transform.up * Time.deltaTime;
-        jump *= jumpDown;
+        //transform.position += jump * transform.up * Time.deltaTime;
+        //jump *= jumpDown;
 
     }
 
