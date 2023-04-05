@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, Header("’nã‚É‚¢‚é‚Æ‚«‚Ì‰¡ˆÚ“®")]
     private float speed = 5.0f;
-    [SerializeField]
+    [SerializeField, Header("‹ó’†‚É‚¢‚é‚Æ‚«‚Ì‰¡ˆÚ“®")]
     private float jumpSpeed;
-    [SerializeField]
+    [SerializeField, Header("‘¬“x§ŒÀ")]
     private float LimitSpeed;
     [SerializeField]
     private float jumpPower = 8.0f;
@@ -20,7 +20,7 @@ public class Character : MonoBehaviour
     const float jumpDown = 0.98f;
     //private GroundCheck2D ground;
     public bool isJump = true;
-    [SerializeField]
+    [SerializeField, Header("Ú’n”»’è‚ğæ‚ç‚¹‚éƒ‚ƒm")]
     private GroundCheck2D[] groundCheck2Ds;
 
     //private touch Tou1;
