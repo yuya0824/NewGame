@@ -8,6 +8,8 @@ public class Character : MonoBehaviour
     private float speed = 5.0f;
 
     [SerializeField]
+    private float LimitSpeed;
+    [SerializeField]
     private float jumpPower = 8.0f;
 
     //private float jump = 0.0f;
@@ -16,9 +18,10 @@ public class Character : MonoBehaviour
 
     const float jumpDown = 0.98f;
     //private GroundCheck2D ground;
-    public bool jumpOK = true;
+    public bool isJump = true;
     [SerializeField]
     private GroundCheck2D[] groundCheck2Ds;
+
     //private touch Tou1;
     //private touch Tou2;
     //private touch Tou3;
@@ -46,20 +49,30 @@ public class Character : MonoBehaviour
         // （右移動）
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            rb.AddForce(transform.right * (speed), ForceMode2D.Force);
+            if (rb.velocity.magnitude < LimitSpeed)
+            {
+                if (isJump)
+                rb.AddForce(transform.right * (speed), ForceMode2D.Force);
+                else
+                    rb.AddForce(transform.right * (speed * 0.8f), ForceMode2D.Force);
+            }
         }
-
         // (左移動）
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rb.AddForce(-transform.right * (speed), ForceMode2D.Force);
+            if (rb.velocity.magnitude < LimitSpeed)
+            {
+                if(isJump)
+                rb.AddForce(-transform.right * (speed), ForceMode2D.Force);
+                else
+                    rb.AddForce(-transform.right * (speed * 0.8f), ForceMode2D.Force);
+            }
         }
-
         //ジャンプ
-        if (Input.GetKeyDown(KeyCode.UpArrow) && jumpOK == true)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isJump == true)
         {
             rb.AddForce(transform.up * (jumpPower), ForceMode2D.Force);
-            jumpOK = false;
+            isJump = false;
             //jumpOK = false;
         }
         IsJump();
@@ -80,10 +93,10 @@ public class Character : MonoBehaviour
         {
             if (groundCheck2D.CheckGroundStatus())
             {
-                jumpOK = true;
+                isJump = true;
                 break;
             }
-            jumpOK = false;
+            isJump = false;
         }
 
     }
