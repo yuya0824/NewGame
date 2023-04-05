@@ -1918,7 +1918,6 @@ GameObject:
   - component: {fileID: 9214155565144166692}
   - component: {fileID: 9214155565144166695}
   - component: {fileID: 9214155565144166694}
-  - component: {fileID: 9214155565144166689}
   m_Layer: 0
   m_Name: Character (1)
   m_TagString: Untagged
@@ -2088,21 +2087,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &9214155565144166689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9214155565144166696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundCheckRadius: 0.4
-  groundCheckOffsetY: -0.45
-  groundCheckDistance: 0.2
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 0
