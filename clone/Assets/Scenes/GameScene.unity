@@ -482,7 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheckRadius: 0.1
   groundCheckOffsetY: 0.1
-  groundCheckDistance: 0.1
+  groundCheckDistance: 0.2
   groundLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheckRadius: 0.1
   groundCheckOffsetY: 0.2
-  groundCheckDistance: 0.1
+  groundCheckDistance: 0.2
   groundLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheckRadius: 0.1
   groundCheckOffsetY: 0.2
-  groundCheckDistance: 0.1
+  groundCheckDistance: 0.2
   groundLayers:
     serializedVersion: 2
     m_Bits: 8
