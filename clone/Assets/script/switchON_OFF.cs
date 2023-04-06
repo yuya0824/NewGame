@@ -5,7 +5,6 @@ using UnityEngine;
 public class switchON_OFF : MonoBehaviour
 {
     public bool DoorOpen;
-    public bool clauseDoor;
 
     public GameObject Charaprefab;
     public GameObject Botton;
@@ -55,19 +54,8 @@ public class switchON_OFF : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        StartCoroutine(Timestop());
-        if (clauseDoor == true)
-        {
-            DoorOpen = false;
-            Door.transform.position = door;
-            Botton.transform.position = bottons;
-        }
-    }
-
-    IEnumerator Timestop()
-    {
-        clauseDoor = false;
-        yield return new WaitForSeconds(1.0f);
-        clauseDoor = true;
+        DoorOpen = false;
+        Door.transform.position = door;
+        Botton.transform.position = bottons;
     }
 }
