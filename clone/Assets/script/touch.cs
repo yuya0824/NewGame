@@ -60,8 +60,8 @@ public class touch : MonoBehaviour
         size = transform.localScale.x;
         while (size <= 1)
         {
-            size += 0.01f;
-            yield return new WaitForSeconds(0.1f);
+            size *= 1.001f;
+            yield return new WaitForSeconds(0.3f);
 
         }
     }

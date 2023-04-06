@@ -482,7 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheckRadius: 0.1
   groundCheckOffsetY: 0.1
-  groundCheckDistance: 0.1
+  groundCheckDistance: 0.2
   groundLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -967,12 +967,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214155565144166692, guid: 0ec38f9d0ae4aa847a6bca94892479ae, type: 3}
       propertyPath: groundCheck2Ds.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9214155565144166692, guid: 0ec38f9d0ae4aa847a6bca94892479ae, type: 3}
       propertyPath: groundCheck2Ds.Array.data[0]
       value: 
-      objectReference: {fileID: 2121095029}
+      objectReference: {fileID: 662072062}
     - target: {fileID: 9214155565144166692, guid: 0ec38f9d0ae4aa847a6bca94892479ae, type: 3}
       propertyPath: groundCheck2Ds.Array.data[1]
       value: 
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheckRadius: 0.1
   groundCheckOffsetY: 0.2
-  groundCheckDistance: 0.1
+  groundCheckDistance: 0.2
   groundLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheckRadius: 0.1
   groundCheckOffsetY: 0.2
-  groundCheckDistance: 0.1
+  groundCheckDistance: 0.2
   groundLayers:
     serializedVersion: 2
     m_Bits: 8
