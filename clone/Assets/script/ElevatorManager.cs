@@ -25,9 +25,10 @@ public class ElevatorManager : MonoBehaviour
     {
         elevator.transform.position += new Vector3(0.0f, plusY, 0.0f);
 
-        if(elevator.transform.position.y >= fastPos.y && DOWN != true)
+        if(elevator.transform.position.y >= fastPos.y)
         {
             DOWN = true;
+            UP = false;
             plusY = 0.0f;
         }
     }
@@ -41,12 +42,16 @@ public class ElevatorManager : MonoBehaviour
             DOWN = false;
         }
 
-        if(collision.gameObject.name == "bone_7" || collision.gameObject.name == "bone_8"
-            || collision.gameObject.name == "bone_9" || collision.gameObject.name == "bone_10" && elevator.transform.position.y >= fastPos.y)
+        if((collision.gameObject.name == "bone_7" || collision.gameObject.name == "bone_8"
+            || collision.gameObject.name == "bone_9" || collision.gameObject.name == "bone_10") && elevator.transform.position.y >= fastPos.y && DOWN == true)
         {
             plusY = -0.01f;
-            UP = false;
-            DOWN = true;
         }
+        if ((collision.gameObject.name == "bone_7" || collision.gameObject.name == "bone_8"
+    || collision.gameObject.name == "bone_9" || collision.gameObject.name == "bone_10") && elevator.transform.position.y <= fastPos.y && UP == true)
+        {
+            plusY = 0.01f;
+        }
+
     }
 }
