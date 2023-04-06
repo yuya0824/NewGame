@@ -49,19 +49,19 @@ public class split : MonoBehaviour
             gameObject.transform.localScale = new Vector3(miniSize, miniSize, 1.0f);
             spownMath--;
         }
-        LayerMask layerMask = 3;
-        RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, Vector3.up, -1.0f, layerMask);
-        if (/*chara.IsDoJump() || */hit)
-        {
-            //spownPosY = 3.0f;
-            Debug.DrawRay(transform.position, Vector3.up * -1.0f, Color.yellow);
-            Debug.Log(hit.distance);
-        }
-        else
-        {
-            //spownPosY = -1.5f;
-            Debug.DrawRay(transform.position, Vector3.up * -1.0f, Color.green);
-        }
+        //LayerMask layerMask = 3;
+        //RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, Vector3.up, -1.0f, layerMask);
+        //if (/*chara.IsDoJump() || */hit)
+        //{
+        //    //spownPosY = 3.0f;
+        //    Debug.DrawRay(transform.position, Vector3.up * -1.0f, Color.yellow);
+        //    Debug.Log(hit.distance);
+        //}
+        //else
+        //{
+        //    //spownPosY = -1.5f;
+        //    Debug.DrawRay(transform.position, Vector3.up * -1.0f, Color.green);
+        //}
 
     }
 
