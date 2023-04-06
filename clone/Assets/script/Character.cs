@@ -101,4 +101,9 @@ public class Character : MonoBehaviour
         }
 
     }
+
+    public bool IsDoJump()
+    {
+        return isJump;
+    }
 }

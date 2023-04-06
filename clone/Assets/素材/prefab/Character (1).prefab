@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 9214155563383361135}
   - component: {fileID: 9214155563383361130}
   - component: {fileID: 9214155563383361125}
+  - component: {fileID: 6758695477027208221}
   m_Layer: 0
   m_Name: bone_9
   m_TagString: Untagged
@@ -168,6 +169,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 9214155565144166696}
+--- !u!114 &6758695477027208221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155563383361133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155563494718428
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +203,7 @@ GameObject:
   - component: {fileID: 9214155563494718425}
   - component: {fileID: 9214155563494718430}
   - component: {fileID: 9214155563494718421}
+  - component: {fileID: 8188453769600652108}
   m_Layer: 0
   m_Name: bone_5
   m_TagString: Untagged
@@ -322,6 +343,25 @@ SpringJoint2D:
   m_Distance: 0.8173214
   m_DampingRatio: 0
   m_Frequency: 10
+--- !u!114 &8188453769600652108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155563494718428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155563554918687
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +377,7 @@ GameObject:
   - component: {fileID: 9214155563554918680}
   - component: {fileID: 9214155563554918681}
   - component: {fileID: 9214155563554918676}
+  - component: {fileID: 3175148997313708741}
   m_Layer: 0
   m_Name: bone_1
   m_TagString: Untagged
@@ -476,6 +517,25 @@ SpringJoint2D:
   m_Distance: 0.95081395
   m_DampingRatio: 0
   m_Frequency: 10
+--- !u!114 &3175148997313708741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155563554918687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155563569370609
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +551,7 @@ GameObject:
   - component: {fileID: 9214155563569370610}
   - component: {fileID: 9214155563569370611}
   - component: {fileID: 9214155563569370606}
+  - component: {fileID: 6806244956197384829}
   m_Layer: 0
   m_Name: bone_11
   m_TagString: Untagged
@@ -630,6 +691,25 @@ SpringJoint2D:
   m_Distance: 0.962277
   m_DampingRatio: 0
   m_Frequency: 10
+--- !u!114 &6806244956197384829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155563569370609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155563657877795
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +725,7 @@ GameObject:
   - component: {fileID: 9214155563657877852}
   - component: {fileID: 9214155563657877853}
   - component: {fileID: 9214155563657877848}
+  - component: {fileID: 7560381967550861900}
   m_Layer: 0
   m_Name: bone_4
   m_TagString: Untagged
@@ -784,6 +865,25 @@ SpringJoint2D:
   m_Distance: 0.904633
   m_DampingRatio: 0
   m_Frequency: 10
+--- !u!114 &7560381967550861900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155563657877795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155563764833730
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +899,7 @@ GameObject:
   - component: {fileID: 9214155563764833791}
   - component: {fileID: 9214155563764833788}
   - component: {fileID: 9214155563764833787}
+  - component: {fileID: 5307574319330397992}
   m_Layer: 0
   m_Name: bone_12
   m_TagString: Untagged
@@ -938,6 +1039,25 @@ SpringJoint2D:
   m_Distance: 0.95760226
   m_DampingRatio: 0
   m_Frequency: 10
+--- !u!114 &5307574319330397992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155563764833730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155563808352677
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +1073,7 @@ GameObject:
   - component: {fileID: 9214155563808352678}
   - component: {fileID: 9214155563808352679}
   - component: {fileID: 9214155563808352674}
+  - component: {fileID: 208911488651075782}
   m_Layer: 0
   m_Name: bone_6
   m_TagString: Untagged
@@ -1092,6 +1213,25 @@ SpringJoint2D:
   m_Distance: 0.79640883
   m_DampingRatio: 0
   m_Frequency: 10
+--- !u!114 &208911488651075782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155563808352677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155564531941189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,6 +1248,7 @@ GameObject:
   - component: {fileID: 9214155564531941191}
   - component: {fileID: 9214155564531941186}
   - component: {fileID: 9214155564531941245}
+  - component: {fileID: 4266444459941265041}
   m_Layer: 0
   m_Name: bone_8
   m_TagString: Untagged
@@ -1260,6 +1401,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 9214155565144166696}
+--- !u!114 &4266444459941265041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155564531941189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155564652858659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,6 +1435,7 @@ GameObject:
   - component: {fileID: 9214155564652858716}
   - component: {fileID: 9214155564652858717}
   - component: {fileID: 9214155564652858712}
+  - component: {fileID: 1028859343307313528}
   m_Layer: 0
   m_Name: bone_3
   m_TagString: Untagged
@@ -1414,6 +1575,25 @@ SpringJoint2D:
   m_Distance: 0.71324486
   m_DampingRatio: 0
   m_Frequency: 10
+--- !u!114 &1028859343307313528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155564652858659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155564771853856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,6 +1609,7 @@ GameObject:
   - component: {fileID: 9214155564771853917}
   - component: {fileID: 9214155564771853858}
   - component: {fileID: 9214155564771853913}
+  - component: {fileID: 3219146150042003168}
   m_Layer: 0
   m_Name: bone_2
   m_TagString: Untagged
@@ -1568,6 +1749,25 @@ SpringJoint2D:
   m_Distance: 0.75329024
   m_DampingRatio: 0
   m_Frequency: 10
+--- !u!114 &3219146150042003168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155564771853856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155565039171837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,6 +1784,7 @@ GameObject:
   - component: {fileID: 9214155565039171839}
   - component: {fileID: 9214155565039171834}
   - component: {fileID: 9214155565039171829}
+  - component: {fileID: 4449017015601114039}
   m_Layer: 0
   m_Name: bone_10
   m_TagString: Untagged
@@ -1736,6 +1937,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 9214155565144166696}
+--- !u!114 &4449017015601114039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155565039171837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155565081337457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,6 +1972,7 @@ GameObject:
   - component: {fileID: 9214155565081337459}
   - component: {fileID: 9214155565081337454}
   - component: {fileID: 9214155565081337448}
+  - component: {fileID: 3898536132488404809}
   m_Layer: 0
   m_Name: bone_7
   m_TagString: Untagged
@@ -1904,6 +2125,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 9214155565144166696}
+--- !u!114 &3898536132488404809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214155565081337457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ef97eee82fac242977694c8f498223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.1
+  groundCheckOffsetY: 0.1
+  groundCheckOffsetX: 0
+  groundCheckDistance: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9214155565144166696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,9 +2288,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb602e5af8e49146983bbddb2120fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 50
+  jumpSpeed: 10
+  LimitSpeed: 10
   jumpPower: 4000
-  jumpOK: 1
+  isJump: 1
+  groundCheck2Ds:
+  - {fileID: 3898536132488404809}
+  - {fileID: 4266444459941265041}
+  - {fileID: 6758695477027208221}
+  - {fileID: 4449017015601114039}
 --- !u!114 &9214155565144166695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2064,8 +2311,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 7449611233680791357, guid: 3874f1b2e752aa848b69e1346178c433, type: 3}
-  player: {fileID: 9214155565144166696}
+  parentObj: {fileID: 0}
   miniSize: 1
+  maxSpown: 5
 --- !u!50 &9214155565144166694
 Rigidbody2D:
   serializedVersion: 4

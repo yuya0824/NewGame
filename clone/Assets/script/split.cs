@@ -17,12 +17,15 @@ public class split : MonoBehaviour
     private int maxSpown;
 
     private int spownMath;
+
+    private Character chara;
     //private GameObject[] cloneObject;
     // Start is called before the first frame update
     void Start()
     {
         character.transform.localScale = new Vector3(miniSize, miniSize, 1.0f);
         spownMath = 0;
+        chara = gameObject.GetComponent<Character>();
         //cloneObject = new GameObject[maxSpown];
         //for(int i = 0; i < maxSpown; i++)
         //{
@@ -46,7 +49,20 @@ public class split : MonoBehaviour
             gameObject.transform.localScale = new Vector3(miniSize, miniSize, 1.0f);
             spownMath--;
         }
-        
+        LayerMask layerMask = 3;
+        RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, Vector3.up, -1.0f, layerMask);
+        if (/*chara.IsDoJump() || */hit)
+        {
+            //spownPosY = 3.0f;
+            Debug.DrawRay(transform.position, Vector3.up * -1.0f, Color.yellow);
+            Debug.Log(hit.distance);
+        }
+        else
+        {
+            //spownPosY = -1.5f;
+            Debug.DrawRay(transform.position, Vector3.up * -1.0f, Color.green);
+        }
+
     }
 
     private void SpownSlime()
@@ -58,7 +74,8 @@ public class split : MonoBehaviour
             //    miniSize = 0.8f;
             //}
             //character.transform.localScale *= new Vector2(0.8f, 0.8f);
-            GameObject obj = Instantiate(character, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 3.0f, gameObject.transform.position.z), Quaternion.identity);
+            float spownPosY = 3.0f;
+            GameObject obj = Instantiate(character, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + spownPosY, gameObject.transform.position.z), Quaternion.identity);
             miniSize *= 0.9f;
             obj.transform.localScale = new Vector3(miniSize, miniSize, 1.0f);
             // ƒ^ƒO•t‚¯
