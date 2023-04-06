@@ -23,7 +23,8 @@ public class Character : MonoBehaviour
     [SerializeField, Header("ê⁄ínîªíËÇéÊÇÁÇπÇÈÉÇÉm")]
     private GroundCheck2D[] groundCheck2Ds;
 
-    //private touch Tou1;
+    //private bool zeroFlag;
+        //private touch Tou1;
     //private touch Tou2;
     //private touch Tou3;
     //private touch Tou4;
@@ -41,6 +42,7 @@ public class Character : MonoBehaviour
         //Tou2 = obj2.GetComponent<touch>();
         //Tou3 = obj3.GetComponent<touch>();
         //Tou4 = obj4.GetComponent<touch>();
+        //zeroFlag = false;
     }
 
     // Update is called once per frame
@@ -72,11 +74,18 @@ public class Character : MonoBehaviour
         //ÉWÉÉÉìÉv
         if (Input.GetKeyDown(KeyCode.UpArrow) && isJump == true)
         {
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0.0f;
             rb.AddForce(transform.up * (jumpPower), ForceMode2D.Force);
             isJump = false;
             //jumpOK = false;
         }
         IsJump();
+        //if(!zeroFlag)
+        //{
+        //    rb.velocity = Vector2.zero;
+        //    rb.angularVelocity = 0.0f;
+        //}
         //jumpOK = Tou1.IsJump();
         //jumpOK = Tou2.IsJump();
         //jumpOK = Tou3.IsJump();
@@ -94,7 +103,14 @@ public class Character : MonoBehaviour
         {
             if (groundCheck2D.CheckGroundStatus())
             {
-                isJump = true;
+                if(isJump == true)
+                {
+                    break;
+                }
+                else
+                {
+                    isJump = true;
+                }
                 break;
             }
             isJump = false;
