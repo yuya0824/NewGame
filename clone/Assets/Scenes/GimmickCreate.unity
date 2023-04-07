@@ -277,6 +277,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 9162555430968240969, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0.09230903
@@ -300,6 +301,11 @@ PrefabInstance:
     - target: {fileID: 9162555430968240975, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0.044371363
+=======
+    - target: {fileID: 9162555430968240973, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+>>>>>>> future/jgim
       objectReference: {fileID: 0}
     - target: {fileID: 9162555431400391317, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
       propertyPath: m_RootOrder
@@ -365,6 +371,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewCharacter
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 9162555431463521731, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0.05732704
@@ -556,6 +563,55 @@ PrefabInstance:
     - target: {fileID: 9162555433047795822, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0.29847625
+=======
+    - target: {fileID: 9162555431400391320, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162555431463521729, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162555431770609040, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162555431858183827, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162555432012901621, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162555432199617045, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162555432241024626, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162555432589237725, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162555432884849299, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162555432953725615, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162555432975517249, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162555433047795820, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+      propertyPath: m_TagString
+      value: Player
+>>>>>>> future/jgim
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
@@ -967,6 +1023,11 @@ Transform:
   m_Father: {fileID: 6729067266454587733}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1398975097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9162555431400391320, guid: 4b7f103a8ed39f04c95e770c7769a865, type: 3}
+  m_PrefabInstance: {fileID: 484206311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1963998394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1163,59 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 5270385395117502659, guid: 7196dd50ba2edb54f95eeb236956c7e2, type: 3}
+=======
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1398975097}
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: elevatorMove.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: elevatorMove.Array.data[0].distance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: elevatorMove.Array.data[1].distance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: elevatorMove.Array.data[2].distance
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: elevatorMove.Array.data[3].distance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: elevatorMove.Array.data[4].distance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: elevatorMove.Array.data[0].elevatorVector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: elevatorMove.Array.data[1].elevatorVector
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: elevatorMove.Array.data[2].elevatorVector
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: elevatorMove.Array.data[3].elevatorVector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729067266578483987, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+      propertyPath: elevatorMove.Array.data[4].elevatorVector
+      value: 302
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729067266578484207, guid: 2feed0157119b934a93c9708772c45a5, type: 3}
+>>>>>>> future/jgim
       propertyPath: m_Name
       value: Lift
       objectReference: {fileID: 0}
