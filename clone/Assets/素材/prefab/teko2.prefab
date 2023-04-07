@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6778461613552859921}
   - component: {fileID: 6778461613552859925}
   - component: {fileID: 6778461613552859924}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: teko2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 849dd6d29b6789147b21228061ce9916, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6922f197f47173a489ddb67dc5d3c4f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,5 +156,5 @@ HingeJoint2D:
     m_MaximumMotorForce: 50
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 40
-    m_UpperAngle: -40
+    m_LowerAngle: 10
+    m_UpperAngle: -10
