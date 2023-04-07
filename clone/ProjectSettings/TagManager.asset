@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Spowns
   - MoveCollider
-  - Destroy
   layers:
   - Default
   - TransparentFX

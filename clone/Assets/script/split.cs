@@ -45,7 +45,9 @@ public class split : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Return) && parentObj.HasChild())
         {
             Destroy(parentObj.transform.GetChild(0).gameObject);
-            SizeUp();
+            miniSize *= 1.0f / 0.9f;
+            gameObject.transform.localScale = new Vector3(miniSize, miniSize, 1.0f);
+            spownMath--;
         }
         //LayerMask layerMask = 3;
         //RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, Vector3.up, -1.0f, layerMask);
@@ -76,8 +78,6 @@ public class split : MonoBehaviour
             GameObject obj = Instantiate(character, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + spownPosY, gameObject.transform.position.z), Quaternion.identity);
             miniSize *= 0.9f;
             obj.transform.localScale = new Vector3(miniSize, miniSize, 1.0f);
-            // 
-            obj.AddComponent<CharacterDestroy>().SetObject(gameObject);
             // タグ付け
             obj.tag = "Spowns";
             // 子オブジェクト化
@@ -89,12 +89,7 @@ public class split : MonoBehaviour
 
     }
 
-    public void SizeUp()
-    {
-        miniSize *= 1.0f / 0.9f;
-        gameObject.transform.localScale = new Vector3(miniSize, miniSize, 1.0f);
-        spownMath--;
-    }
+
 }
 
 /// <summary>
