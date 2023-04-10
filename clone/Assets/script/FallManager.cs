@@ -58,6 +58,7 @@ public class FallManager : MonoBehaviour
         if(onFloorCollider)
         {
             StartCoroutine(MoveDown());
+
         }
 
     }
@@ -96,9 +97,9 @@ public class FallManager : MonoBehaviour
         }
         //var cachedWait2 = new WaitForSeconds(0.8f);
         yield return cachedWait2;
-
-        fallFlag = true;
         onFloorCollider = false;
+        fallFlag = true;
+        yield break;
     }
 
     // 床に"Floor"タグを付けた場合は、関数内のコメント解除するのが好ましい
