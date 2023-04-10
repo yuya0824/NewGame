@@ -75,16 +75,18 @@ public class ElevatorManager : MonoBehaviour
             Gizmos.DrawLine(vector2, vector2 + new Vector2(x, y));
             vector2 += new Vector2(x, y);
         }
-        lastPos = vector2;
+        //lastPos = vector2;
     }
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position += new Vector3(moveVelocity.x, moveVelocity.y, 0.0f);
+        Debug.Log(condition1 );
+        Debug.Log(condition2);
+        //gameObject.transform.position += new Vector3(moveVelocity.x, moveVelocity.y, 0.0f);
 
         if (condition1 == ElevatorCondition1.Wait)
         {
-            if(isFollowMove)
+            if(isMove)
             {
                 StartCoroutine(ElevatorStop());
             }
@@ -125,12 +127,13 @@ public class ElevatorManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" )
         {
-            player.transform.SetParent(transform);
-            if (condition1 == ElevatorCondition1.Wait)
-            { 
+            //player.transform.SetParent(transform);
+            if (condition1 == ElevatorCondition1.Wait && isFollowMove)
+            {
                 isMove = true;
                 condition1 = ElevatorCondition1.Move;
-                isFollowMove = true;
+                //isFollowMove = true;
+                isFollowMove = false;
             }
         }
             //    switch (elevatorCondition)
@@ -186,37 +189,57 @@ public class ElevatorManager : MonoBehaviour
     //    elevatorCondition = ElevatorCondition.WaitUp;
     //    yield break;
     //}
-    void OnCollisionExit(Collision col)
+    //void OnCollisionExit(Collision col)
+    //{
+    //}
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (col.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
+        {
+            player.transform.SetParent(transform);
+
+        }
+    }
+        private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
         {
             player.transform.SetParent(null);
         }
+
     }
     IEnumerator ElevatorMove1()
     {
         isMove = false;
         Vector2 vector2 = fastPos;
-        //ê‘Ç¢êFÇ≈0,0,0Ç©ÇÁè„Ç…1ÇÃê¸Çà¯Ç≠
         for (int i = 0; i < elevatorMove.Length; i++)
         {
             float radAngle = elevatorMove[i].elevatorVector * Mathf.Deg2Rad;
 
             float x = elevatorMove[i].distance * Mathf.Cos(radAngle);
             float y = elevatorMove[i].distance * Mathf.Sin(radAngle);
-            moveVelocity = new Vector2(x, y) / 100;
+            //moveVelocity = new Vector2(x, y) / 100;
+            //float distance_two = Vector2.Distance(vector2, new Vector2( vector2.x + x, vector2.y + y));
             Debug.Log(i);
-            vector2 += new Vector2(x, y);
-            while ((gameObject.transform.position.y) - (vector2.y) > 0.1 ||
-                (gameObject.transform.position.y) - (vector2.y) < -0.1 &&
-                (gameObject.transform.position.x - (vector2.x)) > 0.1 ||
-                (gameObject.transform.position.x - (vector2.x)) < -0.1)
+            for (float j = 0.0f; j < 1.0f; j += 0.01f)
             {
-                yield return new WaitForSeconds(0.1f);
+                transform.position = Vector2.Lerp(vector2,new Vector2( vector2.x + x, vector2.y + y), j);
+
+                yield return new WaitForSeconds(0.01f);
             }
+
+            vector2 += new Vector2(x, y);
+            //while ((gameObject.transform.position.y) - (vector2.y) > 0.1 ||
+            //    (gameObject.transform.position.y) - (vector2.y) < -0.1 &&
+            //    (gameObject.transform.position.x - (vector2.x)) > 0.1 ||
+            //    (gameObject.transform.position.x - (vector2.x)) < -0.1)
+            //{
+            //    yield return new WaitForSeconds(0.1f);
+            //}
             //Gizmos.DrawLine(vector2, vector2 + new Vector2(x, y));
-            gameObject.transform.position = vector2;
+            //gameObject.transform.position = vector2;
         }
+        isMove = true;
         condition1 = ElevatorCondition1.Wait;
         condition2 = ElevatorCondition2.Come;
         yield break;
@@ -226,34 +249,42 @@ public class ElevatorManager : MonoBehaviour
         isMove = false;
         Vector2 vector2 = lastPos;
         //ê‘Ç¢êFÇ≈0,0,0Ç©ÇÁè„Ç…1ÇÃê¸Çà¯Ç≠
-        for (int i = elevatorMove.Length; i > 1; i--)
+        for (int i = elevatorMove.Length - 1; i > -1; i--)
         {
-            float radAngle = elevatorMove[i].elevatorVector * Mathf.Deg2Rad;
+            float radAngle = (/*360.0f - */elevatorMove[i].elevatorVector -180) * Mathf.Deg2Rad;
 
             float x = elevatorMove[i].distance * Mathf.Cos(radAngle);
             float y = elevatorMove[i].distance * Mathf.Sin(radAngle);
-            moveVelocity = (vector2 - new Vector2(x, y)) / 100;
+            //moveVelocity = (vector2 - new Vector2(x, y)) / 100;
+            //float distance_two = Vector3.Distance(startMarker.position, endMarker.position);
             Debug.Log(i);
-            vector2 += new Vector2(x, y);
-            while ((gameObject.transform.position.y) - (vector2.y) > 0.1 ||
-                (gameObject.transform.position.y) - (vector2.y) < -0.1 &&
-                (gameObject.transform.position.x - (vector2.x)) > 0.1 ||
-                (gameObject.transform.position.x - (vector2.x)) < -0.1)
+            for (float j = 0.0f; j < 1.0f; j += 0.01f)
             {
-                yield return new WaitForSeconds(0.1f);
+                transform.position = Vector2.Lerp(vector2, new Vector2(vector2.x + x, vector2.y + y), j);
+
+                yield return new WaitForSeconds(0.01f);
+
             }
+            vector2 += new Vector2(x, y);
+            //while ((gameObject.transform.position.y) - (vector2.y) > 0.1 ||
+            //    (gameObject.transform.position.y) - (vector2.y) < -0.1 &&
+            //    (gameObject.transform.position.x - (vector2.x)) > 0.1 ||
+            //    (gameObject.transform.position.x - (vector2.x)) < -0.1)
+            //{
+            //    yield return new WaitForSeconds(0.1f);
+            //}
             //Gizmos.DrawLine(vector2, vector2 + new Vector2(x, y));
         }
-        moveVelocity = Vector2.zero;
+        //moveVelocity = Vector2.zero;
+        isMove = true;
         condition1 = ElevatorCondition1.Wait;
         condition2 = ElevatorCondition2.Go;
-
         yield break;
     }
 
     IEnumerator ElevatorStop()
     {
-        isFollowMove = false;
+        isMove = false;
 
         for (int i = 0; i < 10; i++)
             yield return new WaitForSeconds(0.1f);
