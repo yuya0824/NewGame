@@ -38,10 +38,13 @@ public class ElevatorManager : MonoBehaviour
     private Vector2 lastPos;
     private bool isMove;
     private bool isFollowMove;
+
+    private SurfaceEffector2D surface;
     //private ElevatorCondition elevatorCondition;
     // Start is called before the first frame update
     void Start()
     {
+        surface = gameObject.GetComponent<SurfaceEffector2D>();
         fastPos = gameObject.transform.position;
         Vector2 vector2 = gameObject.transform.position;
         for (int i = 0; i < elevatorMove.Length; i++)
@@ -86,7 +89,8 @@ public class ElevatorManager : MonoBehaviour
 
         if (condition1 == ElevatorCondition1.Wait)
         {
-            if(isMove)
+            surface.speed = 0.0f;
+            if (isMove)
             {
                 StartCoroutine(ElevatorStop());
             }
@@ -192,22 +196,22 @@ public class ElevatorManager : MonoBehaviour
     //void OnCollisionExit(Collision col)
     //{
     //}
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            player.transform.SetParent(transform);
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        player.transform.SetParent(transform);
 
-        }
-    }
-        private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            player.transform.SetParent(null);
-        }
+    //    }
+    //}
+    //    private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        player.transform.SetParent(null);
+    //    }
 
-    }
+    //}
     IEnumerator ElevatorMove1()
     {
         isMove = false;
@@ -220,11 +224,14 @@ public class ElevatorManager : MonoBehaviour
             float y = elevatorMove[i].distance * Mathf.Sin(radAngle);
             //moveVelocity = new Vector2(x, y) / 100;
             //float distance_two = Vector2.Distance(vector2, new Vector2( vector2.x + x, vector2.y + y));
-            Debug.Log(i);
+            //Debug.Log(i);
             for (float j = 0.0f; j < 1.0f; j += 0.01f)
             {
                 transform.position = Vector2.Lerp(vector2,new Vector2( vector2.x + x, vector2.y + y), j);
+                Debug.Log(vector2.x + ", " + vector2.x + x);
+                surface.speed = x;
 
+                //surface.speed
                 yield return new WaitForSeconds(0.01f);
             }
 
@@ -261,7 +268,7 @@ public class ElevatorManager : MonoBehaviour
             for (float j = 0.0f; j < 1.0f; j += 0.01f)
             {
                 transform.position = Vector2.Lerp(vector2, new Vector2(vector2.x + x, vector2.y + y), j);
-
+                surface.speed = x;
                 yield return new WaitForSeconds(0.01f);
 
             }
