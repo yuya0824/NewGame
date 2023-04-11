@@ -5884,9 +5884,17 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9214155565144166695, guid: 0ec38f9d0ae4aa847a6bca94892479ae, type: 3}
+      propertyPath: miniSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214155565144166695, guid: 0ec38f9d0ae4aa847a6bca94892479ae, type: 3}
       propertyPath: parentObj
       value: 
       objectReference: {fileID: 1512658357}
+    - target: {fileID: 9214155565144166695, guid: 0ec38f9d0ae4aa847a6bca94892479ae, type: 3}
+      propertyPath: layer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9214155565144166696, guid: 0ec38f9d0ae4aa847a6bca94892479ae, type: 3}
       propertyPath: m_Name
       value: Character (1)

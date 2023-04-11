@@ -20,6 +20,9 @@ public class split : MonoBehaviour
 
     private Character chara;
     //private GameObject[] cloneObject;
+
+    [SerializeField]
+    private LayerMask layer;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,18 +53,6 @@ public class split : MonoBehaviour
             spownMath--;
         }
         //LayerMask layerMask = 3;
-        //RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, Vector3.up, -1.0f, layerMask);
-        //if (/*chara.IsDoJump() || */hit)
-        //{
-        //    //spownPosY = 3.0f;
-        //    Debug.DrawRay(transform.position, Vector3.up * -1.0f, Color.yellow);
-        //    Debug.Log(hit.distance);
-        //}
-        //else
-        //{
-        //    //spownPosY = -1.5f;
-        //    Debug.DrawRay(transform.position, Vector3.up * -1.0f, Color.green);
-        //}
 
     }
 
@@ -74,7 +65,20 @@ public class split : MonoBehaviour
             //    miniSize = 0.8f;
             //}
             //character.transform.localScale *= new Vector2(0.8f, 0.8f);
-            float spownPosY = 3.0f;
+            float spownPosY = 0.0f;
+            RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, Vector3.up, -1.5f, layer);
+            if (/*chara.IsDoJump() || */hit)
+            {
+                spownPosY = 3.0f;
+                Debug.DrawRay(transform.position, Vector3.up * -1.0f, Color.yellow);
+                Debug.Log(hit.distance);
+            }
+            else
+            {
+                spownPosY = -1.0f;
+                Debug.DrawRay(transform.position, Vector3.up * -1.0f, Color.green);
+            }
+
             GameObject obj = Instantiate(character, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + spownPosY, gameObject.transform.position.z), Quaternion.identity);
             miniSize *= 0.9f;
             obj.transform.localScale = new Vector3(miniSize, miniSize, 1.0f);
