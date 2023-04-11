@@ -8,6 +8,7 @@ public class TimeManager : MonoBehaviour
     private float timer;
     [SerializeField]
     private Text textTime;
+    private bool oneOrThen;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,16 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            oneOrThen = !oneOrThen;
+        }
+        int oneOrThenGoodbye = 0;
+        if (oneOrThen)
+        {
+            oneOrThenGoodbye = 1;
+        }
+        timer += Time.deltaTime * oneOrThenGoodbye;
         textTime.text = string.Format("{0:00.00} •b", timer);
     }
 
