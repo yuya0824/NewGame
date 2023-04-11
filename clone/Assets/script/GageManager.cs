@@ -7,8 +7,11 @@ public class GageManager : MonoBehaviour
 {
     [SerializeField]
     private split spl;
-    public GameObject objGage;
+    [SerializeField]
+    private GameObject objGage;
     private int cageMath;
+    [SerializeField]
+    private Text text;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class GageManager : MonoBehaviour
         //    cageMath--;
         //}
         this.objGage.GetComponent<Image>().fillAmount = ((float)(spl.GetMaxSpown() - spl.GetSpownMath()) / (float)spl.GetMaxSpown());
+        text.text = string.Format("{0:d} /{1:d}", spl.GetSpownMath(), spl.GetMaxSpown());
     }
 
     void Gage()
