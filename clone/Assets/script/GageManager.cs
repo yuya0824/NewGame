@@ -5,32 +5,37 @@ using UnityEngine.UI;
 
 public class GageManager : MonoBehaviour
 {
-    public GameObject objGage, objText;
-    private Image imageGage;
-    private Text text;
-    private int maxGa, Gage;
-
+    [SerializeField]
+    private split spl;
+    public GameObject objGage;
+    private int cageMath;
     // Start is called before the first frame update
     void Start()
     {
-        imageGage = objGage.GetComponent<Image>();
-        text = objText.GetComponent<Text>();
+        cageMath = spl.GetSpownMath();
     }
-
-    public int GAGE
-    {
-        set { Gage = value; }
-    }
-
-    public int MAXGAGE
-    {
-        set { maxGa = value; }
-    }
-
     // Update is called once per frame
     void Update()
     {
-        imageGage.fillAmount = (float)Gage / maxGa;
-        text.text = Gage.ToString();
+        if(cageMath < spl.GetSpownMath())
+        {
+            Gage();
+            cageMath++;
+        }
+        else if(cageMath > spl.GetSpownMath())
+        {
+            UpGage();
+            cageMath--;
+        }
+    }
+
+    void Gage()
+    {
+        this.objGage.GetComponent<Image>().fillAmount -= (float)(1.0f/spl.GetMaxSpown());
+    }
+
+    void UpGage()
+    {
+        this.objGage.GetComponent<Image>().fillAmount += (float)(1.0f / spl.GetMaxSpown());
     }
 }
