@@ -7,8 +7,11 @@ public class GageManager : MonoBehaviour
 {
     [SerializeField]
     private split spl;
-    public GameObject objGage;
+    [SerializeField]
+    private GameObject objGage;
     private int cageMath;
+    [SerializeField]
+    private Text text;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,16 +20,18 @@ public class GageManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(cageMath < spl.GetSpownMath())
-        {
-            Gage();
-            cageMath++;
-        }
-        else if(cageMath > spl.GetSpownMath())
-        {
-            UpGage();
-            cageMath--;
-        }
+        //if(cageMath < spl.GetSpownMath())
+        //{
+        //    Gage();
+        //    cageMath++;
+        //}
+        //else if(cageMath > spl.GetSpownMath())
+        //{
+        //    UpGage();
+        //    cageMath--;
+        //}
+        this.objGage.GetComponent<Image>().fillAmount = ((float)(spl.GetMaxSpown() - spl.GetSpownMath()) / (float)spl.GetMaxSpown());
+        text.text = string.Format("{0:d} /{1:d}", spl.GetSpownMath(), spl.GetMaxSpown());
     }
 
     void Gage()
