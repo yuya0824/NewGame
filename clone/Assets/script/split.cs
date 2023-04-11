@@ -15,6 +15,8 @@ public class split : MonoBehaviour
 
     [SerializeField]
     private int maxSpown;
+    [SerializeField]
+    private int waterMaxSpown;
 
     private int spownMath;
 
@@ -23,9 +25,13 @@ public class split : MonoBehaviour
 
     [SerializeField]
     private LayerMask layer;
+    [SerializeField]
+    private LayerMask layer2;
 
     [SerializeField]
     private bool debug1 = false;
+
+    private GroundCheck2D[] miniObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +43,8 @@ public class split : MonoBehaviour
         //{
         //    cloneObject[i] = character;
         //}
+        miniObj = GetChildren(this.gameObject.transform);
+
     }
 
     // Update is called once per frame
@@ -57,6 +65,12 @@ public class split : MonoBehaviour
         }
         //LayerMask layerMask = 3;
 
+        for(int i = 0; i< miniObj.Length; i++)
+        {
+            if (miniObj[i].CheckGroundStatus(layer2))
+                IsWater();
+
+        }
     }
 
     private void SpownSlime()
@@ -111,6 +125,37 @@ public class split : MonoBehaviour
         return maxSpown;
     }
 
+    private void IsWater()
+    {
+            Debug.Log(1);
+            maxSpown = waterMaxSpown;
+            miniSize = 1;
+            character.transform.localScale = new Vector3(miniSize, miniSize, 1.0f);
+            spownMath = 0;
+            if (parentObj.HasChild())
+            {
+                //Destroy(parentObj.transform.gameObject);
+                foreach (Transform c in parentObj.transform)
+                {
+                    GameObject.Destroy(c.gameObject);
+                }
+        }
+    }
+
+    public GroundCheck2D[] GetChildren(Transform parent)
+    {
+        // 子オブジェクトを格納する配列作成
+        var children = new GroundCheck2D[parent.childCount];
+
+        // 0～個数-1までの子を順番に配列に格納
+        for (var i = 0; i < children.Length; ++i)
+        {
+            children[i] = parent.GetChild(i).gameObject.GetComponent<GroundCheck2D>();
+        }
+
+        // 子オブジェクトが格納された配列
+        return children;
+    }
 }
 
 /// <summary>

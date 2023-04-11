@@ -17,16 +17,17 @@ public class GageManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(cageMath < spl.GetSpownMath())
-        {
-            Gage();
-            cageMath++;
-        }
-        else if(cageMath > spl.GetSpownMath())
-        {
-            UpGage();
-            cageMath--;
-        }
+        //if(cageMath < spl.GetSpownMath())
+        //{
+        //    Gage();
+        //    cageMath++;
+        //}
+        //else if(cageMath > spl.GetSpownMath())
+        //{
+        //    UpGage();
+        //    cageMath--;
+        //}
+        this.objGage.GetComponent<Image>().fillAmount = ((float)(spl.GetMaxSpown() - spl.GetSpownMath()) / (float)spl.GetMaxSpown());
     }
 
     void Gage()

@@ -39,4 +39,10 @@ public class GroundCheck2D : MonoBehaviour
         return Physics2D.CircleCast((Vector2)transform.position + (groundCheckOffsetY * Vector2.up) + (groundCheckOffsetX * Vector2.right), groundCheckRadius, Vector2.down, groundCheckDistance, groundLayers);
     }
 
+    public RaycastHit2D CheckGroundStatus(LayerMask layer)
+    {
+        return Physics2D.CircleCast((Vector2)transform.position + (groundCheckOffsetY * Vector2.up) + (groundCheckOffsetX * Vector2.right), groundCheckRadius, Vector2.down, groundCheckDistance, layer);
+
+    }
+
 }
