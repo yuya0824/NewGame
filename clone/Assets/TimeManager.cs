@@ -22,12 +22,13 @@ public class TimeManager : MonoBehaviour
         {
             oneOrThen = !oneOrThen;
         }
-        int oneOrThenGoodbye = 0;
-        if (oneOrThen)
-        {
-            oneOrThenGoodbye = 1;
-        }
-        timer += Time.deltaTime * oneOrThenGoodbye;
+        //int oneOrThenGoodbye = 0;
+        //if (oneOrThen)
+        //{
+        //    oneOrThenGoodbye = 1;
+        //}
+        if(oneOrThen)
+        timer += Time.deltaTime/* * oneOrThenGoodbye*/;
         textTime.text = string.Format("{0:00.00} •b", timer);
     }
 
