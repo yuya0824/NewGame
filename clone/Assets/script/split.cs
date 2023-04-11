@@ -23,6 +23,9 @@ public class split : MonoBehaviour
 
     [SerializeField]
     private LayerMask layer;
+
+    [SerializeField]
+    private bool debug1 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +48,7 @@ public class split : MonoBehaviour
             SpownSlime();
         }
         // 生成したオブジェクトの削除と、サイズ変更
-        if(Input.GetKeyDown(KeyCode.Return) && parentObj.HasChild())
+        if(Input.GetKeyDown(KeyCode.Return) && parentObj.HasChild() && debug1)
         {
             Destroy(parentObj.transform.GetChild(0).gameObject);
             miniSize *= 1.0f / 0.9f;
@@ -93,6 +96,20 @@ public class split : MonoBehaviour
 
     }
 
+    public void SetSpownMath(int spown)
+    {
+        spownMath = spown;
+    }
+
+    public int GetSpownMath()
+    {
+        return spownMath;
+    }
+
+    public int GetMaxSpown()
+    {
+        return maxSpown;
+    }
 
 }
 
