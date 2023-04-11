@@ -358,6 +358,10 @@ MonoBehaviour:
   parentObj: {fileID: 0}
   miniSize: 1
   maxSpown: 5
+  layer:
+    serializedVersion: 2
+    m_Bits: 8
+  debug1: 0
 --- !u!50 &9162555431400391318
 Rigidbody2D:
   serializedVersion: 4

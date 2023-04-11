@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spowns
   - MoveCollider
+  - Water
   layers:
   - Default
   - TransparentFX

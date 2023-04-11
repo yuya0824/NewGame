@@ -28,7 +28,7 @@ public class TimeManager : MonoBehaviour
         //{
         //    oneOrThenGoodbye = 1;
         //}
-        if(oneOrThen)
+        //if(oneOrThen)
         timer += Time.deltaTime/* * oneOrThenGoodbye*/;
         textTime.text = string.Format("{0:00.00} •b", timer);
     }
