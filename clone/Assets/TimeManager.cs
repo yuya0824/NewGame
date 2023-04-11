@@ -18,7 +18,7 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        textTime.text = string.Format("{0:0.00} time", timer);
+        textTime.text = string.Format("{0:00.00} •b", timer);
     }
 
     
