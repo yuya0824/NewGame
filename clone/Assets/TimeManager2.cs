@@ -15,6 +15,7 @@ public class TimeManager2 : MonoBehaviour
     void Start()
     {
         timer = Time.time;
+        oneOrThen = true;
     }
 
     // Update is called once per frame
@@ -27,6 +28,5 @@ public class TimeManager2 : MonoBehaviour
 
         if (oneOrThen)
             textTime.text = string.Format("{0:00.00} •b", Time.time - timer);
-        else
     }
 }
