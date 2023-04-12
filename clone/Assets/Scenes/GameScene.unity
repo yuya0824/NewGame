@@ -235,7 +235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122850659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.613884, y: -0.3999853, z: -10}
+  m_LocalPosition: {x: -1.7013845, y: -0.39998674, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5887,7 +5887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214155565144166692, guid: 0ec38f9d0ae4aa847a6bca94892479ae, type: 3}
       propertyPath: speed
-      value: 90
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9214155565144166692, guid: 0ec38f9d0ae4aa847a6bca94892479ae, type: 3}
       propertyPath: jumpSpeed
@@ -5895,7 +5895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214155565144166692, guid: 0ec38f9d0ae4aa847a6bca94892479ae, type: 3}
       propertyPath: LimitSpeed
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9214155565144166692, guid: 0ec38f9d0ae4aa847a6bca94892479ae, type: 3}
       propertyPath: groundCheck2Ds.Array.size
@@ -6632,20 +6632,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1151765776}
     m_ColliderPaths:
-    - - X: 328124992
-        Y: 69750000
-      - X: -328124992
-        Y: 69750000
-      - X: -328124992
-        Y: -69750000
-      - X: 328124992
-        Y: -69750000
+    - - X: 330000000
+        Y: 69757000
+      - X: -330000000
+        Y: 69757000
+      - X: -330000000
+        Y: -69757000
+      - X: 330000000
+        Y: -69757000
   m_CompositePaths:
     m_Paths:
-    - - {x: 32.81247, y: -6.975}
-      - {x: 32.81247, y: 6.975}
-      - {x: -32.8125, y: 6.9749703}
-      - {x: -32.81247, y: -6.975}
+    - - {x: 32.999973, y: -6.9757}
+      - {x: 32.999973, y: 6.9757}
+      - {x: -33, y: 6.9756703}
+      - {x: -32.999973, y: -6.9757}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1151765778
@@ -6677,8 +6677,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151765775}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.9, y: -2.1, z: 0}
-  m_LocalScale: {x: 65.625, y: 13.950001, z: 1}
+  m_LocalPosition: {x: 19, y: -1, z: 0}
+  m_LocalScale: {x: 66, y: 13.9514, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
