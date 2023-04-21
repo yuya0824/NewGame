@@ -88,5 +88,9 @@ public class PauseManager : MonoBehaviour
         }
 
         transform.position = SelectPos;
+
+        pos_1 = pause_1.transform.position;
+        pos_2 = pause_2.transform.position;
+        pos_3 = pause_3.transform.position;
     }
 }
